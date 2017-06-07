@@ -8,13 +8,13 @@ import java.util.Scanner;
 public class application {
     public static HashMap<Integer, logItem> logData = new HashMap<>();
     private static logReader logReader = new logReader();
-    private static csvFileController csvFileController = new csvFileController();
+    public static csvFileController csvFileController = new csvFileController();
+    private static output output = new output();
 
     public static void main(String[] args){
         System.out.println("SPL - Shadowplay Logger");
 
         logData = logReader.initialiseData(csvFileController.getFilePath());
-
         run();
     }
     private static void run(){
@@ -45,7 +45,7 @@ public class application {
         System.out.println("Help     - List this menu again.");
     }
     private static void listData(){
-
+        output.displayAllLogData(logData);
     }
     private static void add(){
 

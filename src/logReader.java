@@ -19,6 +19,7 @@ public class logReader {
                 String[] splitLine = line.split(",");
                 logData.put(Integer.parseInt(splitLine[0]), new logItem());
                 logData.get(Integer.parseInt(splitLine[0])).addData(splitLine[0],splitLine[1],splitLine[2],splitLine[3],splitLine[4],splitLine[5],splitLine[6]);
+                application.csvFileController.setEntries(Integer.parseInt(splitLine[0]));
             }
         } catch (IOException e) {
             e.printStackTrace();
