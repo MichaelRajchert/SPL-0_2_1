@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class logItem {
     private static HashMap<String, String> logItemData = new HashMap<>();
 
-    public static void AddData(String ID,String game, String title, String startTime, String endTime, String comment, String rating){
+    public static void addData(String ID,String game, String title, String startTime, String endTime, String comment, String rating){
         logItemData.put("ID", ID);
         logItemData.put("GAME", game);
         logItemData.put("TITLE", title);

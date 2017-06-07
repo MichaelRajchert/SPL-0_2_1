@@ -2,13 +2,19 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
+ * SPL, The Shadow Play Logger
  * Created by MikesComputer on 7/06/2017.
  */
 public class application {
     public static HashMap<Integer, logItem> logData = new HashMap<>();
+    private static logReader logReader = new logReader();
+    private static csvFileController csvFileController = new csvFileController();
 
     public static void main(String[] args){
         System.out.println("SPL - Shadowplay Logger");
+
+        logData = logReader.initialiseData(csvFileController.getFilePath());
+
         run();
     }
     private static void run(){
